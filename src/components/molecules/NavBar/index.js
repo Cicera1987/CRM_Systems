@@ -1,14 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { PageNavbar, LinkList, LinkListLi, StyleLink, CardIcon } from './style'
 
 
+
 const NavBar = () => {
+
+
     return <PageNavbar>
-            <StyleLink to="/">Home</StyleLink>
+        <StyleLink to="/">
+            <StyleLink to="/">SuperSeller</StyleLink>
+        </StyleLink>
+        
         <LinkList>
             <LinkListLi>
                 <CardIcon>
-                    <StyleLink to="/">Sobre</StyleLink>
+                    <StyleLink to="/">Home</StyleLink>
                 </CardIcon>
             </LinkListLi>
 

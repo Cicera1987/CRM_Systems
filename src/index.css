@@ -1,6 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #FFFAFA;
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-  }
+  width: 100vw;
+  height: 100vw;
+  background-color: #fffafa;
+  font-family: "Montserrat", sans-serif;
+}

@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home teste</h1>
+      <h1>Home</h1>
       <form onSubmit={handleAddClient}>
         <input onChange={e => updateTask(e.target.value)} value={task}/>
         <button>Criar</button>
