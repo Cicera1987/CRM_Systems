@@ -27,8 +27,8 @@ export const LinkList = styled.ul`
 
 `
 export const LinkListLi = styled.li`
-    margin-right: 4em;
-    padding: 1.3em;
+    margin-right: 2em;
+    padding: 1em;
 
 `
 
@@ -42,7 +42,7 @@ export const CardIcon = styled.div`
     
 svg {
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 1.3rem;
 
 
 }

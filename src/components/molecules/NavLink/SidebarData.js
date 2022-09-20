@@ -10,6 +10,8 @@ import { FaIdCardAlt } from 'react-icons/fa';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { FaChartBar }  from 'react-icons/fa';
 import { FaRegFileAlt } from 'react-icons/fa';
+import { BiGroup } from "react-icons/bi";
+import { FiUsers } from "react-icons/fi"
 
 
 
@@ -17,15 +19,18 @@ export const SidebarData = [
     {
         title: 'Clientes',
         path: "/Clients",
+        icon: <FiUsers />,
+        cName: 'nav-text'
+    },
+
+    {
+        title: 'Sócios',
+        path: "/partners",
         icon: <FaUserAlt />,
         cName: 'nav-text'
+
     },
-    {
-        title: 'Configuração',
-        path: "/Settings",
-        icon: <FaRegSun />,
-        cName: 'nav-text'
-    },
+
     {
         title: 'Colaboradores',
         path: "/Collaborators",
@@ -35,9 +40,15 @@ export const SidebarData = [
     {
         title: 'dashboard',
         path: "/dashboard",
-        icon: <FaRegFileAlt/>,
+        icon: <FaChartBar/>,
         cName: 'nav-text'
      
+    },
+    {
+        title: 'Configuração',
+        path: "/Settings",
+        icon: <FaRegSun />,
+        cName: 'nav-text'
     },
 
     

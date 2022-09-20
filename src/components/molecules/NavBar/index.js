@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import { PageNavbar, LinkList, LinkListLi, StyleLink, CardIcon } from './style'
+import { FaHome } from 'react-icons/fa'
+import {MdAccountCircle} from'react-icons/md'
 
 
 
@@ -14,13 +16,13 @@ const NavBar = () => {
         <LinkList>
             <LinkListLi>
                 <CardIcon>
-                    <StyleLink to="/">Home</StyleLink>
+                    <StyleLink to="/"><FaHome/></StyleLink>
                 </CardIcon>
             </LinkListLi>
 
             <LinkListLi>
                 <CardIcon>
-                    <StyleLink to="/login">Login</StyleLink>
+                    <StyleLink to="/login"><MdAccountCircle />.</StyleLink>
                 </CardIcon>
             </LinkListLi>
         </LinkList>
