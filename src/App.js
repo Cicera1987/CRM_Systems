@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import Header from './components/organisms/Header/Header'
-import Footer from './components/organisms/Footer/Footer'
+import Footer from './components/organisms/Footer/index'
 import Home from './components/pages/Home/Home'
 import Login from './components/pages/login/Login'
 import NavBar from './components/molecules/NavBar';

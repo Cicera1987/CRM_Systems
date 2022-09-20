@@ -1,8 +1,11 @@
 import React from 'react'
+import { ContainerStyle } from '../../atoms/Container'
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <ContainerStyle>
+      <h1>Login</h1>
+    </ContainerStyle>
   )
 }
 

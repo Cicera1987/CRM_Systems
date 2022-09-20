@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerStyle } from '../../atoms/Container'
 
 const Settings = () => {
   return (
-    <div>
-          <h1>Settings</h1>
-        </div>
+    <ContainerStyle>
+      <h1>Settings</h1>
+    </ContainerStyle>
   )
 }
 

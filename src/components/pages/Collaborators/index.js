@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerStyle } from '../../atoms/Container'
 
 const Collaborators = () => {
     return (
-        <div>
+  <ContainerStyle>
             <h1>Collaborators</h1>
-        </div>
+  </ContainerStyle>
     )
 }
 
