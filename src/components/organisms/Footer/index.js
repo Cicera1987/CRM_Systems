@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   return (
     <UniversalFooter>
-      {/* <ModalTitle>SuperSeller &copy; 2022</ModalTitle> */}
+      <ModalTitle>SuperSeller &copy; 2022</ModalTitle>
     </UniversalFooter>
   )
 }

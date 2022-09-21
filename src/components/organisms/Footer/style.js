@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const UniversalFooter = styled.div`
-  height: 180px;
+  height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: first baseline;
-  background-color: #fffafa;
+  background-color: #E0FFFF;
 `
 
 export const FooterIcon = styled.div`

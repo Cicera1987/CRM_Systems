@@ -1,12 +1,12 @@
 import React from 'react'
 import { ContainerStyle } from '../../atoms/Container'
 
-const Jobs = () => {
+const Status = () => {
   return (
     <ContainerStyle>
-       
+      
     </ContainerStyle>
   )
 }
 
-export default Jobs
+export default Status
