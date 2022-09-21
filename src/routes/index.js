@@ -10,6 +10,7 @@ import Clients from '../components/pages/Clients/index'
 import Collaborators from '../components/pages/Collaborators/index'
 import Settings from '../components/pages/settings/index'
 import Professionals from '../components/pages/Professionals'
+import Logout from '../components/pages/login/logout'
 
 const Router = () => {
   return (
@@ -21,6 +22,7 @@ const Router = () => {
                   <Routes>
                       <Route path='/' element={<Home />} />
                       <Route path='/login' element={<Login />} />
+                      <Route path='/logout' element={<Logout/>}/>
                       <Route path='/clients' exact element={<Clients />} />
                       <Route path='/settings' exact element={<Settings />} />
                   <Route path='/professionals' exact element={<Professionals />} />

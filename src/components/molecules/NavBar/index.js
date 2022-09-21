@@ -10,10 +10,8 @@ const NavBar = () => {
 
 
     return <PageNavbar>
-        <StyleLink to="/">
             <StyleLink to="/"><BsFillArrowLeftCircleFill/></StyleLink>
-        </StyleLink>
-        
+  
         <LinkList>
             <LinkListLi>
                 <CardIcon>
@@ -23,7 +21,12 @@ const NavBar = () => {
 
             <LinkListLi>
                 <CardIcon>
-                    <StyleLink to="/login"><MdAccountCircle />.</StyleLink>
+                    <StyleLink to="/login"><MdAccountCircle /></StyleLink>
+                </CardIcon>
+            </LinkListLi>
+            <LinkListLi>
+                <CardIcon>
+                    <StyleLink to="/logout"><BsFillArrowLeftCircleFill /></StyleLink>
                 </CardIcon>
             </LinkListLi>
         </LinkList>

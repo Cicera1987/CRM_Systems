@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Server , Model} from 'miragejs';
+import store from './redux/store';
+import {Provider} from 'react-redux'
+
 
 new Server ({
   models:{
@@ -19,7 +22,7 @@ new Server ({
       }],
 
       users: [
-        { id: 1, name:"Analista",  username: "Admin",password: "Admin" },
+        { id: 1, name:"Analista",  username: "Adm",password: "2030" },
       ]
 
     })
@@ -45,13 +48,12 @@ new Server ({
       }
     })
     this.post("/users", (schema, request) => {
-      console.log(request.requestBody)
-      const user = schema.db.users.findBy({ username: JSON.parse(request.requestBody).username })
+      const user = schema.users.findBy({ username: JSON.parse(request.requestBody).username })
       if (!user) {
         return new Response(400, { some: 'header' }, { errors: 'Usuario não existe' });
       }
       if (user.password !== JSON.parse(request.requestBody).password) {
-        return new Response(400, { some: 'header' }, { errors: 'Logn ou senha invalida' });
+        return new Response(400, { some: 'header' }, { errors: 'Login ou senha invalida' });
       }
       return { message: 'Login com sucesso!', users: user.name }
 
@@ -62,8 +64,9 @@ new Server ({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+<Provider store={store}>
+      <App /> 
+  </Provider> 
+
 );
 
