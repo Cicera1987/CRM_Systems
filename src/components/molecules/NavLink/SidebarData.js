@@ -33,7 +33,7 @@ export const SidebarData = [
 
     {
         title: 'Colaboradores',
-        path: "/Collaborators",
+        path: "/Professionals",
         icon: <FaIdCardAlt />,
         cName: 'nav-text'
     },

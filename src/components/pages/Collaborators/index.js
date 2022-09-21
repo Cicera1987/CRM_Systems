@@ -4,7 +4,7 @@ import { ContainerStyle } from '../../atoms/Container'
 const Collaborators = () => {
     return (
   <ContainerStyle>
-            <h1>Collaborators</h1>
+  <h1>Collaborators</h1>
   </ContainerStyle>
     )
 }

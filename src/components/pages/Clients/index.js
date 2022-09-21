@@ -1,11 +1,11 @@
 import React from 'react'
 import { ContainerStyle } from '../../atoms/Container'
-import ProfessionasList from '../../organisms/ProfessionalsList'
+import ClientsList from '../../organisms/ClientsList'
 
 const Clients = () => {
   return (
     <ContainerStyle>
-      <ProfessionasList/>
+     <ClientsList/>
     </ContainerStyle>
   )
 }
