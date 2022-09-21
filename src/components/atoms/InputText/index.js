@@ -1,6 +1,7 @@
 import React from 'react'
 import { DefaultInput, InputLine } from '../DefaultInput/style.js'
 
+
 const InputText = ({onChange, editValue, width, widthLine, placeholder, value, type, margin,invalid}) => {
 
     return (

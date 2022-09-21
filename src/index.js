@@ -19,7 +19,7 @@ new Server ({
       }],
 
       users: [
-        { id: 1, name: "Cica", email: "ccica_25@hotmail.com", password: "123" },
+        { id: 1, name:"Analista",  username: "Admin",password: "Admin" },
       ]
 
     })
@@ -44,6 +44,19 @@ new Server ({
         task: (await schema.taskClients.create({name: data.task})).attrs
       }
     })
+    this.post("/users", (schema, request) => {
+      console.log(request.requestBody)
+      const user = schema.db.users.findBy({ username: JSON.parse(request.requestBody).username })
+      if (!user) {
+        return new Response(400, { some: 'header' }, { errors: 'Usuario não existe' });
+      }
+      if (user.password !== JSON.parse(request.requestBody).password) {
+        return new Response(400, { some: 'header' }, { errors: 'Logn ou senha invalida' });
+      }
+      return { message: 'Login com sucesso!', users: user.name }
+
+    })
+
   }
 })
 
