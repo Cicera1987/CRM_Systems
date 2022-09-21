@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const ButtonLogin = styled.button`
-    background-color: #556B2F;
+    background-color: #060b26;
     color: #fff;
     text-decoration:none;
     text-align: center;
@@ -16,8 +16,7 @@ export const ButtonLogin = styled.button`
     font-size: 1em;
     border-radius: 10px;
 
-    btn{
-        background-color: rgb(41, 32, 32);
+    .btn{
         color: #fff;
         text-align: center;
         cursor: pointer;
@@ -29,8 +28,7 @@ export const ButtonLogin = styled.button`
         font-size: 1em;
 
     }
-    btn.btn-dark {
-        background-color: rgb(41, 32, 32);
+    .btn.btn-dark {
         color: rgb(227, 206, 206);
         border-radius: 10px;  
   }
