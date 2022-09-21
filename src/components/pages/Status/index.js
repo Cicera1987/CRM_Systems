@@ -1,12 +1,12 @@
 import React from 'react'
 import { ContainerStyle } from '../../atoms/Container'
 
-const Login = () => {
+const Status = () => {
   return (
     <ContainerStyle>
-      <h1>Login</h1>
+      
     </ContainerStyle>
   )
 }
 
-export default Login
+export default Status

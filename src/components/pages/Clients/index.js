@@ -1,12 +1,13 @@
 import React from 'react'
 import { ContainerStyle } from '../../atoms/Container'
+import ClientsList from '../../organisms/ClientsList'
 
-const Login = () => {
+const Clients = () => {
   return (
     <ContainerStyle>
-      <h1>Login</h1>
+     <ClientsList/>
     </ContainerStyle>
   )
 }
 
-export default Login
+export default Clients

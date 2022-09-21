@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { ContainerStyle } from '../../atoms/Container'
 
 const http = axios.create({
   baseURL: "http://api.crmsystms.com.br"
@@ -28,8 +29,8 @@ const Home = () => {
 
 
   return (
-    <div>
-      <h1>Home teste</h1>
+    <ContainerStyle>
+      <h1>Home</h1>
       <form onSubmit={handleAddClient}>
         <input onChange={e => updateTask(e.target.value)} value={task}/>
         <button>Criar</button>
@@ -37,7 +38,7 @@ const Home = () => {
       <ul>
         {taskClients.map(texto => <li key={texto.id}>{texto.name}</li>)}
       </ul>
-    </div>
+    </ContainerStyle>
   );
 }
 
