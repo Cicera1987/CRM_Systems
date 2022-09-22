@@ -20,7 +20,8 @@ const Router = () => {
               <NavLink />
               <div className='Container'>
                   <Routes>
-                      <Route path='/' element={<Home />} />
+                      <Route path='/' element={<Login/>} />
+                      <Route path='/home' element={<Home />} />
                       <Route path='/login' element={<Login />} />
                       <Route path='/logout' element={<Logout/>}/>
                       <Route path='/clients' exact element={<Clients />} />

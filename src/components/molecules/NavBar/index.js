@@ -10,18 +10,18 @@ const NavBar = () => {
 
 
     return <PageNavbar>
-            <StyleLink to="/"><BsFillArrowLeftCircleFill/></StyleLink>
+        <StyleLink to="/logout"><BsFillArrowLeftCircleFill/></StyleLink>
   
         <LinkList>
             <LinkListLi>
                 <CardIcon>
-                    <StyleLink to="/"><FaHome/></StyleLink>
+                    <StyleLink to="/home"><FaHome/></StyleLink>
                 </CardIcon>
             </LinkListLi>
 
             <LinkListLi>
                 <CardIcon>
-                    <StyleLink to="/login"><MdAccountCircle /></StyleLink>
+                    <StyleLink to="/"><MdAccountCircle /></StyleLink>
                 </CardIcon>
             </LinkListLi>
             <LinkListLi>

@@ -45,20 +45,24 @@ const Login = () => {
         <FormLogin>
         <div><BsFillPersonFill/></div>
         <span>Login</span>
-          <InputWithLabel
-          type="text"
-          name="username"
-          label="Login"
-          value={username}
-          onChenge={(e) => setUserName(e.target.value)}>
+          <InputWithLabel>
+          <input 
+            type="text"
+            name="username"
+            label="Login"
+            value={username}
+            onChenge={(e) => setUserName(e.target.value)}
+          />
         </InputWithLabel>
         <span>Senha</span>
-          <InputWithLabel
-          type="text"
-          label="Senha"
-          name="password"
-          value={password}
-          onChenge={(e) => setPassword(e.target.value)} >
+          <InputWithLabel>
+          <input 
+            type="text"
+            label="Senha"
+            name="password"
+            value={password}
+            onChenge={(e) => setPassword(e.target.value)}
+          />
         </InputWithLabel>
         <ButtonLogin onClick={handleSubmit}>Login</ButtonLogin>
         </FormLogin>
