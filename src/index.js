@@ -10,7 +10,9 @@ new Server ({
   models:{
     users: Model,
     taskClients: Model,
+    delete: Model,
     task: Model,
+    
 
   },
 
@@ -47,7 +49,7 @@ new Server ({
       }
     })
     this.post("/users", (schema, request) => {
-      const user = schema.users.findBy({ username: JSON.parse(request.requestBody).username })
+      const user = schema.db.users.findBy({ username: JSON.parse(request.requestBody).username })
       if (!user) {
         return new Response(400, { some: 'header' }, { errors: 'Usuario não existe' });
       }
@@ -58,6 +60,11 @@ new Server ({
 
     })
 
+    this.del('/delete/:id', (schema, request) => {
+      let id = request.params.id
+      schema.db.tasks.remove(id)
+      return { message: 'Item removido' }
+    })
   }
 })
 

@@ -8,7 +8,7 @@ export const FormLogin = styled.form`
     background-color:#708090;
     padding : 2em 2em;
     height: 400px;
-    max-width:35%;
+    max-width:20%;
     border-radius: 15px;
     margin-bottom:1em;
     margin-left:10em;
@@ -17,20 +17,7 @@ export const FormLogin = styled.form`
         font-size: 7rem;
     }
 `
-export const ContainerDiv = styled.div`
-    display: flex;
-    justify-content: flex-end;
 
-    `
-export const LabelContainer = styled.label`
-  display: flex;
-  flex-wrap: wrap;
-  padding : 0em 3em 0em 0em;
-  max-width:100%;
-  margin-top:1em;
-  margin-bottom: 1em;
-
-`
 
 
   

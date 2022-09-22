@@ -12,33 +12,32 @@ import Settings from '../components/pages/settings/index'
 import Professionals from '../components/pages/Professionals'
 import Logout from '../components/pages/login/logout'
 import MyRoute from './MyRoute'
-import {toast} from 'react-toastify'
 
 
 
 const Router = () => {
 
-  return (
-      
-          <BrowserRouter>
-              <NavBar />
-              <NavLink />
-              <div className='Container'>
-              {/* <MyRoute path='/' component={<Login />} /> */}
-                  <Routes>
-                      <Route path='/' element={<Login/>} />
-                      <Route path='/home' element={<Home />} />
-                      <Route path='/login' element={<Login />} />
-                      <Route path='/logout' element={<Logout/>}/>
-                      <Route path='/clients' exact element={<Clients />} />
-                      <Route path='/settings' exact element={<Settings />} />
-                  <Route path='/professionals' exact element={<Professionals />} />
-                  </Routes> 
-          </div> 
-              <Footer />
-          </BrowserRouter>
-     
-  )
+    return (
+
+        <BrowserRouter>
+            <NavBar />
+            <NavLink />
+            <div className='Container'>
+                {/* <MyRoute path='/' component={<Login />} /> */}
+                <Routes>
+                    <Route path='/' element={<Login />} />
+                    <Route path='/home' element={<Home />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/logout' element={<Logout />} />
+                    <Route path='/clients' exact element={<Clients />} />
+                    <Route path='/settings' exact element={<Settings />} />
+                    <Route path='/professionals' exact element={<Professionals />} />
+                </Routes>
+            </div>
+            <Footer />
+        </BrowserRouter>
+
+    )
 }
 
 export default Router

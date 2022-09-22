@@ -10,6 +10,7 @@ const http = axios.create({
 const Home = () => {
   const [taskClients, setTaskClients] = useState([])
   const [task, updateTask] = useState()
+  const [del, setDel] = useState(false)
 
   useEffect(() => {
     http.get('/api/taskClients')
@@ -30,6 +31,18 @@ const Home = () => {
     }
   }
 
+  const deleteTask = (index) => {
+    let tempList = taskClients
+    tempList.splice(index, 1)
+    localStorage.setItem("taskList", JSON.stringify(tempList))
+    setTaskClients(tempList)
+    http.delete(`/api/delete/${index}`, {
+      method: 'DELETE',
+    }).then(() => {
+      setDel(!del)
+    });
+
+  }
 
   return (
     <ContainerStyle>
@@ -39,7 +52,7 @@ const Home = () => {
         <button>Criar</button>
       </form>
       <ul>
-        {taskClients.map(texto => <li key={texto.id}>{texto.name}</li>)}
+        {taskClients.map(texto => <li key={texto.id} deleteTask={deleteTask}>{texto.name}</li>)}
       </ul>
     </ContainerStyle>
   );

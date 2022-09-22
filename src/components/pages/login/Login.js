@@ -9,6 +9,8 @@ import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
 import { changeUser } from '../../../redux/userSlice';
 import {useDispatch} from 'react-redux'
 import {toast} from 'react-toastify'
+import { ContainerRow } from '../../molecules/ModalCreateClient/style';
+import { ErrorMessage } from '../../atoms/InputWithLabel/style';
 
 
 
@@ -18,6 +20,8 @@ const http = axios.create({
 })
 
 const Login = () => {
+ 
+
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState(null)
@@ -27,15 +31,18 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    toast.success("Login efetuado com sucesso!")
     dispatch(changeUser(username, password))
-    const data = { username, password }
+    const data = { username: username, password:password }
     let tempList = users
-    localStorage.setItem("users", JSON.stringify(tempList))
-    http.post('/api/users', data).then(res => {
-      setUsers(res.data.users)
-    }).catch(err => setErr(err))
+    if(typeof window !== 'undefined')
+      localStorage.setItem("users", JSON.stringify(tempList))
+      http.post('/api/users', data).then(res => {
+        setUsers(res.data.users)
+        toast.success("Login efetuado com sucesso!")
+    })
+    .catch(err => setErr(err))
     setUserName('')
+    setPassword('')
   }
   useEffect(() => {
     if (users) {
@@ -47,26 +54,27 @@ const Login = () => {
     <ContainerStyle>
         <FormLogin>
         <div><BsFillPersonFill/></div>
-        <span>Login</span>
-          <InputWithLabel>
-          <input 
-            type="text"
-            name="username"
-            label="Login"
+        <ContainerRow>
+          <InputWithLabel  
+            type='username'
+            name='username'
+            label='Login'
+            required    
+            onChange={(e) => setUserName(e.target.value)}
             value={username}
-            onChenge={(e) => setUserName(e.target.value)}
           />
-        </InputWithLabel>
-        <span>Senha</span>
-          <InputWithLabel>
-          <input 
-            type="text"
-            label="Senha"
-            name="password"
+        </ContainerRow>
+        <ContainerRow>
+          <InputWithLabel
+            type='password'
+            label='Senha'
+            name='password'
+            required       
+            onChange={(e) => setPassword(e.target.value)}
             value={password}
-            onChenge={(e) => setPassword(e.target.value)}
           />
-        </InputWithLabel>
+        </ContainerRow>
+
         <ButtonLogin onClick={handleSubmit}>Login</ButtonLogin>
         </FormLogin>
     </ContainerStyle>
