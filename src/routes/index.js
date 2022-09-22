@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, } from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Footer from '../components/organisms/Footer/index'
 import Home from '../components/pages/Home/Home'
@@ -11,7 +11,7 @@ import Collaborators from '../components/pages/Collaborators/index'
 import Settings from '../components/pages/settings/index'
 import Professionals from '../components/pages/Professionals'
 import Logout from '../components/pages/login/logout'
-import MyRoute from './MyRoute'
+import PrivateRoute from './PrivateRoute'
 
 
 

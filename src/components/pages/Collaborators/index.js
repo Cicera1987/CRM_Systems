@@ -1,12 +1,37 @@
 import React from 'react'
-import { ContainerStyle } from '../../atoms/Container'
+import { ContainerListColaboratorsStyle, ContainerListItemColaborators } from './style'
 
-const Collaborators = () => {
+const Collaborators = ({data}) => {
+  if (!data) {
+
     return (
-  <ContainerStyle>
-  <h1>Collaborators</h1>
-  </ContainerStyle>
+      <ContainerListColaboratorsStyle>
+        <ContainerListItemColaborators>
+          Loading...
+        </ContainerListItemColaborators>
+      </ContainerListColaboratorsStyle>
+
     )
+  }
+  
+  if (!data.length) {
+    return (
+      <ContainerListColaboratorsStyle>
+        <ContainerListItemColaborators>
+
+          Nenhum colaborador encontrado...
+          
+        </ContainerListItemColaborators>
+      </ContainerListColaboratorsStyle>
+    )
+  }
+
+  return (
+    <ContainerListColaboratorsStyle>
+
+    </ContainerListColaboratorsStyle>
+  )
+
 }
 
 export default Collaborators

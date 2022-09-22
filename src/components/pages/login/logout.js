@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style'
 import {useDispatch} from 'react-redux'
-import { logout } from '../../../redux/userSlice'
+import { logout } from '../../../redux/reducers/userSlice'
 
 const Logout = () => {
     const dispatch = useDispatch()

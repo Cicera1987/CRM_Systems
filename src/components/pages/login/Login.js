@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { BsFillPersonFill } from "react-icons/bs";
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
-import { changeUser } from '../../../redux/userSlice';
+import { changeUser } from '../../../redux/reducers/userSlice';
 import {useDispatch} from 'react-redux'
 import {toast} from 'react-toastify'
 import { ContainerRow } from '../../molecules/ModalCreateClient/style';

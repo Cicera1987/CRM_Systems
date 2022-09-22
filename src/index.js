@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Server , Model} from 'miragejs';
-import store from './redux/store';
+import store from './redux/store/store';
 import {Provider} from 'react-redux'
 
 
@@ -24,6 +24,7 @@ new Server ({
 
       users: [
         { id: 1, name:"Analista",  username: "Adm",password: "2030" },
+        { id: 2, name: "Cicera_Vendedora", username: "Cicera", password: "0123" },
       ]
 
     })
