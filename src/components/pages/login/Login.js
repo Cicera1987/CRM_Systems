@@ -3,21 +3,13 @@ import { ContainerStyle } from '../../atoms/Container'
 import InputWithLabel from '../../atoms/InputWithLabel'
 import { FormLogin } from './style'
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 import { BsFillPersonFill } from "react-icons/bs";
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
-import { changeUser } from '../../../redux/reducers/userSlice';
+import { changeUser } from '../../../redux/reducers/userSlice'
 import {useDispatch} from 'react-redux'
 import {toast} from 'react-toastify'
 import { ContainerRow } from '../../molecules/ModalCreateClient/style';
-import { ErrorMessage } from '../../atoms/InputWithLabel/style';
-
-
-
-
-const http = axios.create({
-  baseURL: "http://api.crmsystms.com.br"
-})
+import axios from '../../../services/axios';
 
 const Login = () => {
  
@@ -31,14 +23,14 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    toast.success("Login efetuado com sucesso!")
     dispatch(changeUser(username, password))
     const data = { username: username, password:password }
     let tempList = users
     if(typeof window !== 'undefined')
       localStorage.setItem("users", JSON.stringify(tempList))
-      http.post('/api/users', data).then(res => {
+      axios.post('/api/users', data).then(res => {
         setUsers(res.data.users)
-        toast.success("Login efetuado com sucesso!")
     })
     .catch(err => setErr(err))
     setUserName('')

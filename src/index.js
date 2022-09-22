@@ -33,7 +33,7 @@ new Server ({
 
   routes(){
     this.namespace = 'api'
-    this.urlPrefix = 'http://api.crmsystms.com.br'
+    this.urlPrefix = 'http://api.desafioubis2022.com.br'
 
     
     this.get('/taskClients',async (schema)=> {

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+
 import { ContainerStyle } from '../../atoms/Container'
 import {toast} from 'react-toastify'
-import PagesTemplate from '../templates/PagesTemplate'
+import axios from '../../../services/axios'
 
-const http = axios.create({
-  baseURL: "http://api.crmsystms.com.br"
-})
+
 
 const Home = () => {
   const [taskClients, setTaskClients] = useState([])
@@ -14,7 +12,7 @@ const Home = () => {
   const [del, setDel] = useState(false)
 
   useEffect(() => {
-    http.get('/api/taskClients')
+    axios.get('/api/taskClients')
       .then(res => setTaskClients(res.data.taskClients))
 
   },[])
@@ -23,7 +21,7 @@ const Home = () => {
     e.preventDefault()
     
     if(task.trim()){
-      http.post('/api/taskClients', {task})
+      axios.post('/api/taskClients', {task})
       .then(res => {
         setTaskClients(oldTasks => [...oldTasks, res.data.task])
         toast.success("Dado criado com sucesso!")
@@ -37,7 +35,7 @@ const Home = () => {
     tempList.splice(index, 1)
     localStorage.setItem("taskList", JSON.stringify(tempList))
     setTaskClients(tempList)
-    http.delete(`/api/delete/${index}`, {
+    axios.delete(`/api/delete/${index}`, {
       method: 'DELETE',
     }).then(() => {
       setDel(!del)
