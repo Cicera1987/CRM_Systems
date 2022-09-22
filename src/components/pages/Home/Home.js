@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { ContainerStyle } from '../../atoms/Container'
+import {toast} from 'react-toastify'
 
 const http = axios.create({
   baseURL: "http://api.crmsystms.com.br"
@@ -18,10 +19,12 @@ const Home = () => {
 
   const handleAddClient = e => {
     e.preventDefault()
+    
     if(task.trim()){
       http.post('/api/taskClients', {task})
       .then(res => {
         setTaskClients(oldTasks => [...oldTasks, res.data.task])
+        toast.success("Dado criado com sucesso!")
         updateTask('')
       })
     }

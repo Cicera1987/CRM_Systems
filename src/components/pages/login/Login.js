@@ -8,6 +8,8 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
 import { changeUser } from '../../../redux/userSlice';
 import {useDispatch} from 'react-redux'
+import {toast} from 'react-toastify'
+
 
 
 
@@ -25,6 +27,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    toast.success("Login efetuado com sucesso!")
     dispatch(changeUser(username, password))
     const data = { username, password }
     let tempList = users

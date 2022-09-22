@@ -11,14 +11,20 @@ import Collaborators from '../components/pages/Collaborators/index'
 import Settings from '../components/pages/settings/index'
 import Professionals from '../components/pages/Professionals'
 import Logout from '../components/pages/login/logout'
+import MyRoute from './MyRoute'
+import {toast} from 'react-toastify'
+
+
 
 const Router = () => {
+
   return (
       
           <BrowserRouter>
               <NavBar />
               <NavLink />
               <div className='Container'>
+              {/* <MyRoute path='/' component={<Login />} /> */}
                   <Routes>
                       <Route path='/' element={<Login/>} />
                       <Route path='/home' element={<Home />} />
