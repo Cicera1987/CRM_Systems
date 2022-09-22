@@ -8,7 +8,7 @@ export const ButtonLogin = styled.button`
     text-align: center;
     cursor: pointer;
     border-radius: 10px;
-    width: 120px;
+    width: 45;
     font-weight: bold;
     text-decoration: none;
     border: none;

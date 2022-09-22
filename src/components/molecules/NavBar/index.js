@@ -24,11 +24,7 @@ const NavBar = () => {
                     <StyleLink to="/"><MdAccountCircle /></StyleLink>
                 </CardIcon>
             </LinkListLi>
-            <LinkListLi>
-                <CardIcon>
-                    <StyleLink to="/logout"><BsFillArrowLeftCircleFill /></StyleLink>
-                </CardIcon>
-            </LinkListLi>
+           
         </LinkList>
 
     </PageNavbar>

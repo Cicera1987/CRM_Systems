@@ -4,14 +4,14 @@ import { ContainerStyle } from '../../atoms/Container'
 import InputWithLabel from '../../atoms/InputWithLabel'
 import { ContainerButton, ContainerRegisterClientData, ContainerRow, RegisterForm, SecondaryText } from './style'
 
-const ModalCreateClients = () => {
+const ModalCreateSeller = () => {
 
 
 
     return (
         <ContainerStyle>
         <ContainerRegisterClientData>
-            <SecondaryText margin="2.5em">Cadastro de Cliente</SecondaryText>
+            <SecondaryText margin="2.5em">Cadastro de Funcionário</SecondaryText>
             <RegisterForm>
                 <ContainerRow>
                     <InputWithLabel
@@ -147,4 +147,4 @@ const ModalCreateClients = () => {
     )
 }
 
-export default ModalCreateClients
+export default ModalCreateSeller

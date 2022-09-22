@@ -12,6 +12,10 @@ import Settings from '../components/pages/settings/index'
 import Professionals from '../components/pages/Professionals'
 import Logout from '../components/pages/login/logout'
 import PrivateRoute from './PrivateRoute'
+import PagesTemplate from '../components/pages/templates/PagesTemplate'
+import ListClients from '../components/organisms/ClientsListItems'
+import ModalCreateClients from '../components/molecules/ModalCreateClient'
+import ModalCreateSeller from '../components/molecules/ModalCreatSeller'
 
 
 
@@ -32,6 +36,8 @@ const Router = () => {
                     <Route path='/clients' exact element={<Clients />} />
                     <Route path='/settings' exact element={<Settings />} />
                     <Route path='/professionals' exact element={<Professionals />} />
+                    <Route path='/modalCreateClients' element={<ModalCreateClients/>}/>
+                    <Route path='/modalCreateSeller' element={<ModalCreateSeller />} />
                 </Routes>
             </div>
             <Footer />
