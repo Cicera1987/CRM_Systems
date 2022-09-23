@@ -5,11 +5,11 @@ import { FormLogin } from './style'
 import { useNavigate } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
-import { changeUser } from '../../../redux/reducers/userSlice'
 import {useDispatch} from 'react-redux'
 import {toast} from 'react-toastify'
 import { ContainerRow } from '../../molecules/ModalCreateClient/style';
 import axios from '../../../services/axios';
+import * as usersLogin from '../../../redux/actions/Users'
 
 const Login = () => {
  
@@ -24,10 +24,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     toast.success("Login efetuado com sucesso!")
-    dispatch({
-      type: "USERS",
-      payload:{username, password}
-    })
+    dispatch(usersLogin.usersLogin())
     const data = { username, password }
     let tempList = users
     if(typeof window !== 'undefined')

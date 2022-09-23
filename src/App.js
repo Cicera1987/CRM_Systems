@@ -5,7 +5,7 @@ import {ToastContainer} from 'react-toastify'
 import GlobalStyle from './Style/GlobalStyle.js'
 import 'react-toastify/dist/ReactToastify.min.css';
 import { Provider } from 'react-redux';
-import store from './redux/store/index.js';
+import store from './redux/store/store.js';
 
 
 const App = () =>  (

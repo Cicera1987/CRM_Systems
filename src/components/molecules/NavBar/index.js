@@ -8,11 +8,11 @@ import { useSelector } from 'react-redux/es/exports'
 
 
 const NavBar = () => {
-    const users = useSelector(state => state.users)
+    const users = useSelector(state => state.usuario.users)
 
 
     return <PageNavbar>
-        <StyleLink to="/logout"><BsFillArrowLeftCircleFill /></StyleLink>
+        <StyleLink to="/"></StyleLink>
         <LinkList>
             <LinkListLi>
                 <CardIcon>
@@ -21,8 +21,9 @@ const NavBar = () => {
             </LinkListLi>
             <LinkListLi>       
                 <CardIcon>
-                    <StyleLink to="/"><MdPersonAddAlt1 />{users ? 'Logado' : 'Fazer Login'}</StyleLink>   
-                </CardIcon>           
+                    <StyleLink to="/"><MdPersonAddAlt1 /></StyleLink>        
+                </CardIcon> 
+                {users ? 'Logado' : 'Fazer Login'}          
             </LinkListLi>   
         </LinkList>
     </PageNavbar>

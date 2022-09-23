@@ -1,5 +1,0 @@
-reducer:
-
-dispara uma ação, o reducer receber esta ação e devolve uma noca ação!
-
-action -> reducer -> newState
