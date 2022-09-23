@@ -6,9 +6,14 @@ import ClientsList from '../../organisms/ClientsList'
 import ListClients from '../../organisms/ClientsListItems'
 import { Link } from 'react-router-dom'
 import { StyleLink } from '../../molecules/NavBar/style'
+import NavBar from '../../molecules/NavBar'
+import NavLink from '../../molecules/NavLink/Sidebar'
 
 const Clients = () => {
   return (
+    <>
+    <NavBar/>
+    <NavLink/>
     <ContainerStyle>
       <StyleLink to="/modalCreateClients">
         <ButtonLogin onSubmit="Submit">Cadastrar novo Cliente</ButtonLogin>
@@ -16,6 +21,7 @@ const Clients = () => {
      <ClientsList/>
       <ListClients/>
     </ContainerStyle>
+    </>
   )
 }
 

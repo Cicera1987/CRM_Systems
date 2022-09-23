@@ -17,7 +17,10 @@ export const FormLogin = styled.form`
         font-size: 7rem;
     }
 `
-
+export const ContainerHeader = styled.div`
+    width: 100%;
+    height: 100Px;
+`
 
 
   

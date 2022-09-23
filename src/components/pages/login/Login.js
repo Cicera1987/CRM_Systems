@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { ContainerStyle } from '../../atoms/Container'
 import InputWithLabel from '../../atoms/InputWithLabel'
-import { FormLogin } from './style'
+import { ContainerHeader, FormLogin } from './style'
 import { useNavigate } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs";
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
@@ -44,12 +44,14 @@ const Login = () => {
   }
   useEffect(() => {
     if (users) {
-      navigate("/login")
+      navigate("/home")
     }
   }, [users])
 
 
   return (
+  <>
+  <ContainerHeader/>
     <ContainerStyle>
         <FormLogin>
         <div><BsFillPersonFill/></div>
@@ -77,6 +79,7 @@ const Login = () => {
         <ButtonLogin onClick={handleSubmit}>Login</ButtonLogin>
         </FormLogin>
     </ContainerStyle>
+    </>
   )
 }
 

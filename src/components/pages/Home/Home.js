@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { ContainerStyle } from '../../atoms/Container'
 import {toast} from 'react-toastify'
 import axios from '../../../services/axios'
+import NavBar from '../../molecules/NavBar'
+import NavLink from '../../molecules/NavLink/Sidebar'
+
 
 
 
@@ -44,8 +47,10 @@ const Home = () => {
   }
 
   return (
+    <>
+    <NavBar/>
+    <NavLink/>
     <ContainerStyle>
-      {/* <PagesTemplate/> */}
       <h1>Home</h1>
       <form onSubmit={handleAddClient}>
         <input onChange={e => updateTask(e.target.value)} value={task}/>
@@ -55,6 +60,7 @@ const Home = () => {
         {taskClients.map(texto => <li key={texto.id} deleteTask={deleteTask}>{texto.name}</li>)}
       </ul>
     </ContainerStyle>
+    </>
   );
 }
 

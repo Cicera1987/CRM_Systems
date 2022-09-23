@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Server , Model} from 'miragejs';
-import store from './redux/store/store';
-import {Provider} from 'react-redux'
+
 
 
 new Server ({
