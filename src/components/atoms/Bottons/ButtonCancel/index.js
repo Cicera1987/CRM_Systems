@@ -1,7 +1,7 @@
-import Buttoncancel from './style'
+import ButtonCancel from './style'
 
 
-export const ButtonCancel = () => {
+export const Button = () => {
     return (
         <ButtonCancel>
             {this.props.children}

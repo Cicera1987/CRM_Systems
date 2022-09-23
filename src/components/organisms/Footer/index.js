@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonCancel } from '../../atoms/Bottons/ButtonCancel/style.js';
+import { ButtonCancel } from '../../atoms/Bottons/ButtonCancel/style';
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style.js';
 import { ContainerStyle } from '../../atoms/Container/index.js';
 import {
