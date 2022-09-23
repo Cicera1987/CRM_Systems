@@ -24,8 +24,11 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     toast.success("Login efetuado com sucesso!")
-    dispatch(changeUser(username, password))
-    const data = { username: username, password:password }
+    dispatch({
+      type: "USERS",
+      payload:{username, password}
+    })
+    const data = { username, password }
     let tempList = users
     if(typeof window !== 'undefined')
       localStorage.setItem("users", JSON.stringify(tempList))

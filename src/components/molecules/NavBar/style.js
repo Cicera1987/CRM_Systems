@@ -6,7 +6,7 @@ export const PageNavbar = styled.div`
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px 0px;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 2em;
+    padding: 0.3em 2em;
 `
 export const StyleLink = styled(Link)`
     text-decoration: none;
@@ -15,6 +15,9 @@ export const StyleLink = styled(Link)`
     transition: 0.7s;
     font-size: 1em;
     font-family: "Montserrat", sans-seri;
+    
+    
+
 
 &:hover{
     color: #B0C4DE;
@@ -24,10 +27,11 @@ export const StyleLink = styled(Link)`
 export const LinkList = styled.ul`
     display: flex;
     list-style: none;
+  
 
 `
 export const LinkListLi = styled.li`
-    margin-right: 2em;
+    margin-right: 3em;
     padding: 1em;
 
 `
