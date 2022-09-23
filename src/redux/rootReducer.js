@@ -4,5 +4,6 @@ import modelsReducer from './reducers/reducer'
 
 export default combineReducers({
     usuario:modelsReducer,
+    
 
 })

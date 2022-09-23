@@ -23,14 +23,20 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    toast.success("Login efetuado com sucesso!")
+    
+      if (users) {
+        toast.success("Login efetuado com sucesso!")  
+      } else {
+        toast.error("Usuario ou login não existe")
+      }
+    if (typeof window == !undefined)
     dispatch(usersLogin.usersLogin())
     const data = { username, password }
     let tempList = users
-    if(typeof window !== 'undefined')
       localStorage.setItem("users", JSON.stringify(tempList))
       axios.post('/api/users', data).then(res => {
         setUsers(res.data.users)
+
     })
     .catch(err => setErr(err))
     setUserName('')
@@ -41,6 +47,7 @@ const Login = () => {
       navigate("/login")
     }
   }, [users])
+
 
   return (
     <ContainerStyle>
