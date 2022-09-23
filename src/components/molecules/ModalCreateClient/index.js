@@ -2,6 +2,9 @@ import React from 'react'
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style'
 import { ContainerStyle } from '../../atoms/Container'
 import InputWithLabel from '../../atoms/InputWithLabel'
+import Footer from '../../organisms/Footer'
+import NavBar from '../NavBar'
+import NavLink from '../NavLink/Sidebar'
 import { ContainerButton, ContainerRegisterClientData, ContainerRow, RegisterForm, SecondaryText } from './style'
 
 const ModalCreateClients = () => {
@@ -9,6 +12,10 @@ const ModalCreateClients = () => {
 
 
     return (
+
+        <>
+            <NavBar />
+            <NavLink />
         <ContainerStyle>
         <ContainerRegisterClientData>
             <SecondaryText margin="2.5em">Cadastro de Cliente</SecondaryText>
@@ -138,12 +145,14 @@ const ModalCreateClients = () => {
                         name="email"
                     />
                 </ContainerRow>
-               <ContainerButton>
-                    <ButtonLogin >Cadastar</ButtonLogin>
-               </ContainerButton>
+                <ContainerRow>
+                        <Footer />
+                </ContainerRow>
+               
             </RegisterForm>
         </ContainerRegisterClientData>
         </ContainerStyle>
+        </>
     )
 }
 

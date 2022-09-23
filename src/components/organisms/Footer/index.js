@@ -1,16 +1,24 @@
 import React from 'react'
+import { ButtonCancel } from '../../atoms/Bottons/ButtonCancel/style.js';
+import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style.js';
+import { ContainerStyle } from '../../atoms/Container/index.js';
 import {
   UniversalFooter,
-  ModalTitle
+  ModalTitle,
+  StyleStart
 }
   from "./style.js";
 
 
 const Footer = () => {
   return (
-    <UniversalFooter>
-      <ModalTitle>SuperSeller &copy; 2022</ModalTitle>
-    </UniversalFooter>
+    <ContainerStyle>
+      <UniversalFooter>
+        <ButtonCancel>Cancelar</ButtonCancel>
+        <ButtonLogin>Cadastrar</ButtonLogin>
+      </UniversalFooter>
+      
+    </ContainerStyle>
   )
 }
 

@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { StyleLink } from '../../molecules/NavBar/style'
 import NavBar from '../../molecules/NavBar'
 import NavLink from '../../molecules/NavLink/Sidebar'
+import Footer from '../../organisms/Footer'
 
 const Clients = () => {
   return (

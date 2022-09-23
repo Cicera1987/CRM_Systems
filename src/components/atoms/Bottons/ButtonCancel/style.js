@@ -1,9 +1,9 @@
 
 import styled from "styled-components";
 
-export const ButtonLogin = styled.button`
-    background-color: #060b26;
-    color: #fff;
+export const ButtonCancel = styled.button`
+    background-color: #fff;
+    color: #060b26;
     text-decoration:none;
     text-align: center;
     cursor: pointer;
@@ -11,9 +11,10 @@ export const ButtonLogin = styled.button`
     width: 45;
     font-weight: bold;
     text-decoration: none;
-    border: none;
+    border: 1px solid #060b26;
     padding: 10px 15px;
     font-size: 1em;
+    margin: 0em 2em 0em 0em;
 
     .btn{
         color: #fff;
@@ -32,10 +33,10 @@ export const ButtonLogin = styled.button`
         border-radius: 10px;  
   }
   .btn:hover {
-        background-color: #212223;
+        background-color: #ADD8E6;
         color: rgb(141, 118, 118);
   }
     &:hover{
-        color: rgb(239, 229, 229);
+        color: #778899;
     }
 `

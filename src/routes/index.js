@@ -25,8 +25,6 @@ const Router = () => {
     return (
 
         <BrowserRouter>
-            <div className='Container'>
-                {/* <MyRoute path='/' component={<Login />} /> */}
                 <Routes>
                     <Route path='/' element={<Login />} />
                     <Route path='/home' element={<Home />} />
@@ -39,7 +37,6 @@ const Router = () => {
                     <Route path='/modalCreateClients' element={<ModalCreateClients/>}/>
                     <Route path='/modalCreateSeller' element={<ModalCreateSeller />} />
                 </Routes>
-            </div>
         </BrowserRouter>
 
     )
