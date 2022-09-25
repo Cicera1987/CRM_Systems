@@ -13,9 +13,7 @@ const Settings = () => {
     <NavLink/>
       <ContainerStyle>
         <h1>Configurações</h1>
-        <h3>Cadastros</h3>
         <ContainerConfig>
-          <Jobs />
           <Status />
         </ContainerConfig>
         <ContainerConfig02>

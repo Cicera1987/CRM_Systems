@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerRegisterClientData = styled.div`
     padding: 1em 3em 0 3em;
-    border-bottom: 1px solid rgba(145, 158, 171, 0.3); 
+ 
 `
 
 export const RegisterForm = styled.form`

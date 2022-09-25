@@ -5,7 +5,7 @@ export const UniversalFooter = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin: 0.3em 0em 0em 1em;
+  margin: 0.3em 0em 3em 1em;
   
 `
 

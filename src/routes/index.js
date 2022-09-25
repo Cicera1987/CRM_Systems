@@ -25,7 +25,7 @@ const Router = () => {
                     <Route path='/logout' element={<Logout />} />
                     <Route path='/clients' exact element={<Clients />} />
                     <Route path='/settings' exact element={<Settings />} />
-                    <Route path='dashboard' exact element={<Dashboard/>}/>
+                    <Route path='/dashboard' exact element={<Dashboard/>}/>
                     <Route path='/professionals' exact element={<Professionals />} />
                     <Route path='/modalColaborators' element={<ModalCoraborators />} />
                     <Route path='/modalclients' element={<ModalClients/>}/>

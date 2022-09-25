@@ -10,8 +10,7 @@ import {toast} from 'react-toastify'
 import { ContainerRow } from '../../molecules/models/ModalClients/style';
 import axios from '../../../services/axios';
 import * as usersLogin from '../../../redux/actions/Users'
-import Home from '../Home/Home';
-import NavBar from '../../molecules/NavBar';
+
 
 const Login = () => {
  
@@ -47,7 +46,7 @@ const Login = () => {
   }
   useEffect(() => {
     if (users) {
-      navigate("/home")
+      navigate("/dashboard")
     }
   }, [users])
 
