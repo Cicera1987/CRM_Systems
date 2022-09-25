@@ -2,8 +2,8 @@
 import styled from "styled-components";
 
 export const ButtonCancel = styled.button`
-    background-color: #060b26;
-    color: #fff;
+    background-color: #fff;
+    color: #696969;
     text-decoration:none;
     text-align: center;
     cursor: pointer;
@@ -11,11 +11,10 @@ export const ButtonCancel = styled.button`
     width: 45;
     font-weight: bold;
     text-decoration: none;
-    border: none;
     padding: 10px 15px;
     font-size: 1em;
-    border-radius: 10px;
-
+    border: 1.5px solid #D3D3D3;
+    margin: 0em 2em 0em 1em;
     .btn{
         color: #fff;
         text-align: center;
@@ -37,6 +36,6 @@ export const ButtonCancel = styled.button`
         color: rgb(141, 118, 118);
   }
     &:hover{
-        color: rgb(239, 229, 229);
+        color: #778899;
     }
 `

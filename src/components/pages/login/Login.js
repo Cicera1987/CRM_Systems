@@ -7,9 +7,11 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style';
 import {useDispatch} from 'react-redux'
 import {toast} from 'react-toastify'
-import { ContainerRow } from '../../molecules/ModalCreateClient/style';
+import { ContainerRow } from '../../molecules/models/ModalClients/style';
 import axios from '../../../services/axios';
 import * as usersLogin from '../../../redux/actions/Users'
+import Home from '../Home/Home';
+import NavBar from '../../molecules/NavBar';
 
 const Login = () => {
  
@@ -23,13 +25,14 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
-      if (users) {
-        toast.success("Login efetuado com sucesso!")  
+      if (typeof window == !undefined)
+      if (typeof window == !null)
+      if (!users) {
+        return toast.error("Usuario ou login não existe")
       } else {
-        toast.error("Usuario ou login não existe")
+        toast.success("Login efetuado com sucesso!")
       }
-    if (typeof window == !undefined)
+
     dispatch(usersLogin.usersLogin())
     const data = { username, password }
     let tempList = users
@@ -49,9 +52,10 @@ const Login = () => {
   }, [users])
 
 
+
   return (
-  <>
-  <ContainerHeader/>
+    <>
+<ContainerHeader/>
     <ContainerStyle>
         <FormLogin>
         <div><BsFillPersonFill/></div>

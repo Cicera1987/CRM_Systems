@@ -26,7 +26,7 @@ export const SidebarData = [
 
     {
         title: 'Usuário',
-        path: "/partners",
+        path: "/jobs",
         icon: <FaUserAlt />,
         cName: 'nav-text'
 

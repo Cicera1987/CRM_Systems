@@ -1,19 +1,36 @@
-import React from 'react'
-import { ButtonLogin } from '../../atoms/Bottons/ButtonLogin/style'
-import { ContainerStyle } from '../../atoms/Container'
-import InputWithLabel from '../../atoms/InputWithLabel'
-import Footer from '../../organisms/Footer'
-import NavBar from '../NavBar'
-import NavLink from '../NavLink/Sidebar'
-import { ContainerButton, ContainerRegisterClientData, ContainerRow, RegisterForm, SecondaryText } from './style'
 
-const ModalCreateSeller = () => {
+import { ButtonLogin } from '../../../atoms/Bottons/ButtonLogin/style'
+import { ContainerStyle } from '../../../atoms/Container'
+import InputWithLabel from '../../../atoms/InputWithLabel'
+import NavBar from '../../NavBar'
+import NavLink from '../../NavLink/Sidebar'
+import { ContainerRegisterClientData, ContainerRow, RegisterForm, SecondaryText } from './style'
+import React, { useState } from 'react'
+import Modal from 'react-modal'
+Modal.setAppElement('#root')
+
+const ModalCoraborators = () => {
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+        function openModal() {
+            setIsOpen(true)
+        }
+        function closeModal() {
+            setIsOpen(false)
+        }
 
 
 
     return (
 
         <>
+            <ButtonLogin onClick={openModal}>Novo Colaborador</ButtonLogin>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                overlayClassName="modal-overlay"
+                contentLabel="Example Modal"
+            >
             <NavBar />
             <NavLink />
             <ContainerStyle>
@@ -145,13 +162,14 @@ const ModalCreateSeller = () => {
                                 name="email"
                             />
                         </ContainerRow>
-                        <Footer />
                     </RegisterForm>
                 </ContainerRegisterClientData>
             </ContainerStyle>
+                <ButtonLogin onClick={closeModal}>Sair</ButtonLogin> 
+            </Modal>
         </>
 
     )
 }
 
-export default ModalCreateSeller
+export default ModalCoraborators
