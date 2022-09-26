@@ -1,1 +1,3 @@
-export const USERS = 'USERS';
+export const USERS_SUCESS = 'USERSSUCESS';
+export const USERS_REQUEST = 'USERSREQUEST';
+export const USERS_FAILURE = 'USERSFAILURE';

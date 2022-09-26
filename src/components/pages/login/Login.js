@@ -24,7 +24,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    dispatch(usersLogin.usersLogin())
+    dispatch(usersLogin.usersLoginRequest())
+    
     const data = { username, password }
     if (!data) {
       toast.error("Usuario ou login não existe")
