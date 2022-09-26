@@ -57,7 +57,7 @@ new Server ({
     this.post('/createClients', async (schema, request) => {
       const data = JSON.parse(request.requestBody)
       return {
-        clients: (await schema.createClients.create({ name: data.clients })).attrs,
+        clients: (await schema.db.createClients.create({ name: data.clients })).attrs,
         birthDate: (await schema.createClients.create({ name: data.birthDate })).attrs,
         cpf: (await schema.createClients.create({ name: data.cpf })).attrs,
         rg: (await schema.createClients.create({ name: data.rg })).attrs,
