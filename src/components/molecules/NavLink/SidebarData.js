@@ -12,6 +12,7 @@ import { FaChartBar }  from 'react-icons/fa';
 import { FaRegFileAlt } from 'react-icons/fa';
 import { BiGroup } from "react-icons/bi";
 import { FiUsers } from "react-icons/fi"
+import { MdAccountCircle, MdPersonAddAlt1 } from 'react-icons/md'
 
 
 
@@ -24,8 +25,8 @@ export const SidebarData = [
     },
 
     {
-        title: 'Sócios',
-        path: "/partners",
+        title: 'Usuário',
+        path: "/jobs",
         icon: <FaUserAlt />,
         cName: 'nav-text'
 
@@ -48,6 +49,13 @@ export const SidebarData = [
         title: 'Configuração',
         path: "/Settings",
         icon: <FaRegSun />,
+        cName: 'nav-text'
+    },
+
+    {
+        title: 'Logout',
+        path: "/",
+        icon: <MdAccountCircle/>,
         cName: 'nav-text'
     },
 

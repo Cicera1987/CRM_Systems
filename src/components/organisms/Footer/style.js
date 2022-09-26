@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const UniversalFooter = styled.div`
-  height: 120px;
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: first baseline;
-  background-color: #E0FFFF;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0.3em 0em 3em 1em;
+  
 `
 
 export const FooterIcon = styled.div`
@@ -24,4 +25,9 @@ export const ModalTitle = styled.p`
 font-size: 1em;
 margin: 0.7em;
 text-align: center;
+`
+export const StyleStart = styled.div`
+  width: 100%;
+  display: flex;
+  
 `

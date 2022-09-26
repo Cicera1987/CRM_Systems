@@ -1,69 +1,79 @@
-import styled from "styled-components"
-import { Link } from 'react-router-dom'
+import styled from 'styled-components'; 
+import { Link } from 'react-router-dom';
 
-export const PageNavbar = styled.div`
-    display: flex;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3em 2em;
-`
-export const StyleLink = styled(Link)`
-    text-decoration: none;
-    border: none;
-    color: black;
-    transition: 0.7s;
-    font-size: 1em;
-    font-family: "Montserrat", sans-seri;
-
-&:hover{
-    color: #B0C4DE;
-}
-`
-
-export const LinkList = styled.ul`
-    display: flex;
-    list-style: none;
-
-`
-export const LinkListLi = styled.li`
-    margin-right: 4em;
-    padding: 1.5em;
-
-`
-
-export const CardIcon = styled.div`
-    display:flex;
-    flex-direction:row;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: absolute;
-    margin: 0 30px;
-    
-svg {
+export const Container = styled.div`
+  background-color: #8B008B;
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  left: ${props => props.sidebar ? '0' : '-100%'};
+  animation: showSidebar .4s;
+  > svg {
+    position: fixed;
+    color: white;
+    width: 30px;
+    height: 30px;
+    margin-top: 32px;
+    margin-left: 32px;
     cursor: pointer;
-    font-size: 3rem;
+  }
+  @keyframes showSidebar {
+    from {
+      opacity: 0;
+      width: 0;
+    }
+    to {
+      opacity: 1;
+      width: 300px;
+    }
+  }
+`;
 
+export const Content = styled.div`
+  margin-top: 100px;
+`;
 
-}
+export const NavMenuItems = styled.div`
+  width: 100%;
+
 `
-export const NavText = styled.div`
+export const NavBarMenu = styled.div`
+    width: 20%;
+    height: 80px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 8px 0px 8px 16px;
-    list-style: none;
-    height: 60px;
-a {
-    text-decoration: none;
-    color: #f5f5f5;
-    font-size: 18px;
-    width: 95%;
-    height: 100%;
+`
+export const MenuBars = styled(Link)`
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+`
+export const NavMenu = styled.div`
+    background-color: #778899;
+    width: 250px;
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+
+    &:NavMenu:active{
+          left: 0;
+          transition: 350ms;
+    }
+
+`
+export const NavBarToggle = styled.li`
+    background-color:#778899;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
-    padding: 0 16px;
-    border-radius: 4px;
-}
 
 `
