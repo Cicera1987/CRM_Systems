@@ -10,15 +10,27 @@ new Server ({
     users: Model,
     taskClients: Model,
     delete: Model,
-    task: Model,
+    createClients: Model,
+    clients: Model,
+    birthDate: Model,
+    cpf: Model,
+    rg: Model,
+    telephoneNumber: Model,
+    email: Model,
+    cep: Model,
+    number: Model,
+    complement: Model,
+    endereco: Model,
+
+
     
 
   },
 
   seeds(server) {
     server.db.loadData({
-      taskClients: [{
-        name: 'Cliente 01'
+      createClients: [{
+        name: " Cliente 01"
       }],
 
       users: [
@@ -35,19 +47,29 @@ new Server ({
     this.urlPrefix = 'http://api.desafioubis2022.com.br'
 
     
-    this.get('/taskClients',async (schema)=> {
+    this.get('/createClients',async (schema)=> {
       return{
-        taskClients: (await schema.taskClients.all()).models,
+        createClients: (await schema.createClients.all()).models,
       } 
 
     })
 
-    this.post('/taskClients', async (schema, request) => {
+    this.post('/createClients', async (schema, request) => {
       const data = JSON.parse(request.requestBody)
       return {
-        task: (await schema.taskClients.create({name: data.task})).attrs
+        clients: (await schema.createClients.create({ name: data.clients })).attrs,
+        birthDate: (await schema.createClients.create({ name: data.birthDate })).attrs,
+        cpf: (await schema.createClients.create({ name: data.cpf })).attrs,
+        rg: (await schema.createClients.create({ name: data.rg })).attrs,
+        telephoneNumber: (await schema.createClients.create({ name: data.telephoneNumber })).attrs,
+        email: (await schema.createClients.create({ name: data.email })).attrs,
+        cep: (await schema.createClients.create({ name: data.cep })).attrs,
+        number: (await schema.createClients.create({ name: data.number })).attrs,
+        complement: (await schema.createClients.create({ name: data.complement })).attrs,
+        endereco: (await schema.createClients.create({ name: data.endereco })).attrs,
       }
     })
+
     this.post("/users", (schema, request) => {
       const user = schema.db.users.findBy({ username: JSON.parse(request.requestBody).username })
       if (!user) {

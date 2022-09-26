@@ -17,29 +17,27 @@ const Login = () => {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [users, setUsers] = useState(null)
+  const [users, setUsers] = useState()
   const [err, setErr] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-      if (typeof window == !undefined)
-      if (typeof window == !null)
-      if (!users) {
-        return toast.error("Usuario ou login não existe")
-      } else {
-        toast.success("Login efetuado com sucesso!")
-      }
-
     dispatch(usersLogin.usersLogin())
     const data = { username, password }
-    let tempList = users
-      localStorage.setItem("users", JSON.stringify(tempList))
+    if (!data) {
+      toast.error("Usuario ou login não existe")
+    } else {
+      toast.success("Login efetuado com sucesso!")
+    }
+    let users = data
+      localStorage.setItem("users", JSON.stringify(users))
       axios.post('/api/users', data).then(res => {
         setUsers(res.data.users)
 
     })
+
     .catch(err => setErr(err))
     setUserName('')
     setPassword('')
@@ -65,7 +63,7 @@ const Login = () => {
             label='Login'
             required    
             onChange={(e) => setUserName(e.target.value)}
-            value={username}
+            value={users?.username}
           />
         </ContainerRow>
         <ContainerRow>
@@ -75,7 +73,7 @@ const Login = () => {
             name='password'
             required       
             onChange={(e) => setPassword(e.target.value)}
-            value={password}
+            value={users?.password}
           />
         </ContainerRow>
 

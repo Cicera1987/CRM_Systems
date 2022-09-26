@@ -12,32 +12,59 @@ import { UniversalFooter } from '../../../organisms/Footer/style'
 import { ButtonCancel } from '../../../atoms/Bottons/ButtonCancel/style'
 
 
+
 Modal.setAppElement('#root')
 
 
 const ModelClients = () => {
     const [createClients, setCreateClients] = useState([])
     const [clients, setclents] = useState()
+    const [birthDate, setBirthDate] = useState()
+    const [cpf, setcpf] = useState()
+    const [rg, setRg] = useState()
+    const [telephoneNumber, setTelephoneNumber] = useState()
+    const [email, setEmail] = useState()
+    const [cep, setCep] = useState()
+    const [compement, setComplement] = useState()
+    const [number, setNumber] = useState()
+    const [endereco, setEndereco] = useState()
 
     useEffect(() => {
         axios.get('/api/createClients')
             .then(res => setCreateClients(res.data.createClients))
-
     }, [])
+
+
 
     const handleClient = e => {
         e.preventDefault()
 
         if (clients.trim()) {
-            axios.post('/api/CreateClients', { clients })
+            axios.post('/api/createClients',
+                { clients },
+                { birthDate },
+                { cpf }, { rg },
+                { telephoneNumber },
+                { email },
+                { cep },
+                { endereco },
+                { compement })
                 .then(res => {
-                    setCreateClients(oldClients => [...oldClients, res.data.clients])
+                    setCreateClients(oldClients => [...oldClients,
+                    res.data.clients,
+                    res.data.birthDate,
+                    res.data.cpf,
+                    res.data.rg,
+                    res.data.telephoneNumber,
+                    res.data.email,
+                    res.data.cep,
+                    res.data.compement,
+                    res.data.endereco])
                     toast.success("Dado criado com sucesso!")
-                    setclents('')
                 })
         }
     }
-
+console.log(createClients)
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -63,11 +90,11 @@ const ModelClients = () => {
                 <ContainerStyle>
                     <ContainerRegisterClientData>
                         <SecondaryText margin="2.5em">Cadastro de Cliente</SecondaryText>
-                        <RegisterForm >
+                        <RegisterForm onChange={handleClient}>
                             <ContainerRow>
                                 <InputWithLabel
                                     value={clients}
-                                    onChange={e => setclents(e.target.valeu)}
+                                    onChange={e => setclents(e.target.value)}
                                     label="Nome"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -77,8 +104,8 @@ const ModelClients = () => {
                                 />
 
                                 <InputWithLabel
-                                    value=""
-                                    onChange={('')}
+                                    value={birthDate}
+                                    onChange={e => setBirthDate(e.target.value)}
                                     label="Data de nascimento"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -90,8 +117,8 @@ const ModelClients = () => {
                             <ContainerRow>
                                 <InputWithLabel
                                     id="cpf"
-                                    value=""
-                                    onChange={('')}
+                                    value={cpf}
+                                    onChange={e => setcpf(e.target.value)}
                                     label="CPF"
                                     mask={[
                                         /\d/,
@@ -116,8 +143,8 @@ const ModelClients = () => {
                                     name="cpf"
                                 />
                                 <InputWithLabel
-                                    value=""
-                                    onChange={('')}
+                                    value={rg}
+                                    onChange={e => setRg(e.target.value)}
                                     label="RG"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -125,9 +152,9 @@ const ModelClients = () => {
                                     name="rg"
                                 />
                                 <InputWithLabel
-                                    value=''
+                                    value={telephoneNumber}
                                     type="number"
-                                    onChange={('')}
+                                    onChange={e => setTelephoneNumber(e.target.value)}
                                     label="Telefone"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -138,8 +165,8 @@ const ModelClients = () => {
                             </ContainerRow>
                             <ContainerRow>
                                 <InputWithLabel
-                                    value=""
-                                    onChange={('')}
+                                    value={cep}
+                                    onChange={e => setCep(e.target.value)}
                                     label="CEP"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -147,29 +174,29 @@ const ModelClients = () => {
                                     name="cep"
                                 />
                                 <InputWithLabel
-                                    value=''
+                                    value={endereco}
                                     type="text"
-                                    onChange={('')}
-                                    label="Rua"
+                                    onChange={e => setEndereco(e.target.value)}
+                                    label="Endereço"
                                     padding="0em 2em 0 0em"
                                     width="100%"
                                     widthContainer="40%"
-                                    name="rua"
+                                    name="endereco"
                                 />
                                 <InputWithLabel
-                                    value=''
+                                    value={number}
                                     type="number"
-                                    onChange={('')}
-                                    label="Telefone"
+                                    onChange={e => setNumber(e.target.value)}
+                                    label="número"
                                     padding="0em 2em 0 0em"
                                     width="100%"
                                     widthContainer="25%"
                                     name="numero"
                                 />
                                 <InputWithLabel
-                                    value=''
+                                    value={compement}
                                     type="text"
-                                    onChange={('')}
+                                    onChange={e => setComplement(e.target.value)}
                                     label="Complemento"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -179,9 +206,9 @@ const ModelClients = () => {
                             </ContainerRow>
                             <ContainerRow>
                                 <InputWithLabel
-                                    value=''
+                                    value={email}
                                     type="email"
-                                    onChange={('')}
+                                    onChange={e => setEmail(e.target.value)}
                                     label="E-mail"
                                     padding="0em 2em 0 0em"
                                     width="100%"
@@ -191,13 +218,16 @@ const ModelClients = () => {
                             </ContainerRow>
                             <UniversalFooter>
                                 <ButtonCancel>Cancelar</ButtonCancel>
-                                <ButtonLogin onSubmit={handleClient}>Cadastrar</ButtonLogin>
+                                <ButtonLogin onSubmit="submit">Cadastrar</ButtonLogin>
                             </UniversalFooter>
                         </RegisterForm>
                         <ButtonLogin onClick={closeModal}>Sair</ButtonLogin>
+                        <ul>
+                            {createClients.map(texto => <li key={texto.value}>{texto.name}</li>)}
+                        </ul>
                     </ContainerRegisterClientData>
                 </ContainerStyle>
-                
+
             </Modal>
         </>
     )
