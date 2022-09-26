@@ -48,7 +48,8 @@ const ModelClients = () => {
                 { email },
                 { cep },
                 { endereco },
-                { compement })
+                { compement },
+                {number})
                 .then(res => {
                     setCreateClients(oldClients => [...oldClients,
                     res.data.clients,
@@ -59,12 +60,14 @@ const ModelClients = () => {
                     res.data.email,
                     res.data.cep,
                     res.data.compement,
-                    res.data.endereco])
+                    res.data.endereco,
+                    res.data.number,
+                ])
                     toast.success("Dado criado com sucesso!")
                 })
+                
         }
     }
-console.log(createClients)
 
     const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -93,7 +96,7 @@ console.log(createClients)
                         <RegisterForm onChange={handleClient}>
                             <ContainerRow>
                                 <InputWithLabel
-                                    value={clients}
+                                    value={setCreateClients?.clients}
                                     onChange={e => setclents(e.target.value)}
                                     label="Nome"
                                     padding="0em 2em 0 0em"
@@ -104,7 +107,7 @@ console.log(createClients)
                                 />
 
                                 <InputWithLabel
-                                    value={birthDate}
+                                    value={setCreateClients?.birthDate}
                                     onChange={e => setBirthDate(e.target.value)}
                                     label="Data de nascimento"
                                     padding="0em 2em 0 0em"
@@ -117,7 +120,7 @@ console.log(createClients)
                             <ContainerRow>
                                 <InputWithLabel
                                     id="cpf"
-                                    value={cpf}
+                                    value={setCreateClients?.cpf}
                                     onChange={e => setcpf(e.target.value)}
                                     label="CPF"
                                     mask={[
@@ -143,7 +146,7 @@ console.log(createClients)
                                     name="cpf"
                                 />
                                 <InputWithLabel
-                                    value={rg}
+                                    value={setCreateClients?.rg}
                                     onChange={e => setRg(e.target.value)}
                                     label="RG"
                                     padding="0em 2em 0 0em"
@@ -152,7 +155,7 @@ console.log(createClients)
                                     name="rg"
                                 />
                                 <InputWithLabel
-                                    value={telephoneNumber}
+                                    value={setCreateClients?.telephoneNumber}
                                     type="number"
                                     onChange={e => setTelephoneNumber(e.target.value)}
                                     label="Telefone"
@@ -165,7 +168,7 @@ console.log(createClients)
                             </ContainerRow>
                             <ContainerRow>
                                 <InputWithLabel
-                                    value={cep}
+                                    value={setCreateClients?.cep}
                                     onChange={e => setCep(e.target.value)}
                                     label="CEP"
                                     padding="0em 2em 0 0em"
@@ -174,7 +177,7 @@ console.log(createClients)
                                     name="cep"
                                 />
                                 <InputWithLabel
-                                    value={endereco}
+                                    value={setCreateClients?.endereco}
                                     type="text"
                                     onChange={e => setEndereco(e.target.value)}
                                     label="Endereço"
@@ -184,7 +187,7 @@ console.log(createClients)
                                     name="endereco"
                                 />
                                 <InputWithLabel
-                                    value={number}
+                                    value={setCreateClients?.number}
                                     type="number"
                                     onChange={e => setNumber(e.target.value)}
                                     label="número"
@@ -194,7 +197,7 @@ console.log(createClients)
                                     name="numero"
                                 />
                                 <InputWithLabel
-                                    value={compement}
+                                    value={setCreateClients?.compement}
                                     type="text"
                                     onChange={e => setComplement(e.target.value)}
                                     label="Complemento"
@@ -206,7 +209,7 @@ console.log(createClients)
                             </ContainerRow>
                             <ContainerRow>
                                 <InputWithLabel
-                                    value={email}
+                                    value={setCreateClients?.email}
                                     type="email"
                                     onChange={e => setEmail(e.target.value)}
                                     label="E-mail"
@@ -223,7 +226,7 @@ console.log(createClients)
                         </RegisterForm>
                         <ButtonLogin onClick={closeModal}>Sair</ButtonLogin>
                         <ul>
-                            {createClients.map(texto => <li key={texto.value}>{texto.name}</li>)}
+                            {createClients.map(texto => <li key={texto.id}>{texto.name}</li>)}
                         </ul>
                     </ContainerRegisterClientData>
                 </ContainerStyle>

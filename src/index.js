@@ -20,10 +20,7 @@ new Server ({
     cep: Model,
     number: Model,
     complement: Model,
-    endereco: Model,
-
-
-    
+    endereco: Model, 
 
   },
 
