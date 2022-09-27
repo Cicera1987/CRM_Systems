@@ -11,15 +11,8 @@ const ClientsList = () => {
               <LisTitle margin="0">CPF</LisTitle>
         </ListCPF>
         <ListEmail>
-              <LisTitle margin="0">Email</LisTitle>
+              <LisTitle margin="0">E-mail</LisTitle>
         </ListEmail>
-        <ListPhoneNumbers>
-              <LisTitle margin="0">Telefone</LisTitle>
-        </ListPhoneNumbers>
-        <ListStatus>
-              <LisTitle margin="0">Status</LisTitle>
-        </ListStatus>
-
     </LisContainer>
   )
 }

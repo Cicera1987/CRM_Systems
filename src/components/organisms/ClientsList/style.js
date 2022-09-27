@@ -13,19 +13,19 @@ export const LisContainer = styled.div`
 export const ListName = styled.div`
     display: flex;
     align-items: center;
-    width: 18%;
+    width: 25%;
     padding-left: 5em;
 `
 export const ListCPF = styled.div`
     display: flex;
     align-items: center;
-    width: 18%;
+    width: 30%;
     padding-left: 5em;
 `
 export const ListEmail = styled.div`
     display: flex;
     align-items: center;
-    width: 18%;
+    width: 30%;
     padding-left: 5em;
 `
 export const ListStatus = styled.div`

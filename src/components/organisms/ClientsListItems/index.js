@@ -1,33 +1,22 @@
 import React from 'react'
-import { ContainerListItem, ContainerListClientsStyle, ContainerListItemClients } from './style'
+import { useParams } from 'react-router-dom'
+import { ContainerStyle } from '../../atoms/Container';
+import ClientsList from '../ClientsList/index'
 
-const ListClients = (data) => {
 
-    if(!data){
-  return (
-    <ContainerListClientsStyle>
-          <ContainerListItemClients>
-                  Loading...
-          </ContainerListItemClients>
-    </ContainerListClientsStyle>
+const ListClients = () => {
+  const {id} = useParams();
+
     
-  )
-    }
-    if (!data.length) {
-        return (
-            <ContainerListClientsStyle>
-            <ContainerListItemClients>
-                    Nenhum cliente encontrado...
-            </ContainerListItemClients>
-            </ContainerListClientsStyle>
+  return (
+    <ContainerStyle>
+      <ClientsList/>
+    </ContainerStyle>
+    
         )
     }
-    return(
-        <ContainerListItem>
-            
-        </ContainerListItem>
-    )
-
-}
+   
 
 export default ListClients
+
+{/* {id && <div> id: {id}</div>} */ }

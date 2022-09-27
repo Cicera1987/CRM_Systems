@@ -65,3 +65,26 @@ export const ContainerButton = styled.div`
     align-items: center;
     background-color: #f4f6f8;
 `
+
+export const LabelInput = styled.label`
+        margin-bottom: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #555555;
+        
+
+
+    `
+export const InputTexto = styled.input`
+        width: 100%;
+        border: 1px solid #AAAAAA;
+        border-radius: 8px;
+        background-color: #fff;
+        color: #AAAAAA;
+        height: 39px;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        margin-right: 1em;
+        padding: 1em 2em 1em 1em;
+        opacity: 0.9;
+    `

@@ -12,22 +12,18 @@ new Server ({
     delete: Model,
     createClients: Model,
     clients: Model,
-    birthDate: Model,
     cpf: Model,
-    rg: Model,
-    telephoneNumber: Model,
     email: Model,
-    cep: Model,
-    number: Model,
-    complement: Model,
-    endereco: Model, 
+ 
 
   },
 
   seeds(server) {
     server.db.loadData({
       createClients: [{
-        name: " Cliente 01"
+        name: "",
+        value:""
+
       }],
 
       users: [
@@ -54,16 +50,8 @@ new Server ({
     this.post('/createClients', async (schema, request) => {
       const data = JSON.parse(request.requestBody)
       return {
-        clients: (await schema.db.createClients.create({ name: data.clients })).attrs,
-        birthDate: (await schema.createClients.create({ name: data.birthDate })).attrs,
-        cpf: (await schema.createClients.create({ name: data.cpf })).attrs,
-        rg: (await schema.createClients.create({ name: data.rg })).attrs,
-        telephoneNumber: (await schema.createClients.create({ name: data.telephoneNumber })).attrs,
-        email: (await schema.createClients.create({ name: data.email })).attrs,
-        cep: (await schema.createClients.create({ name: data.cep })).attrs,
-        number: (await schema.createClients.create({ name: data.number })).attrs,
-        complement: (await schema.createClients.create({ name: data.complement })).attrs,
-        endereco: (await schema.createClients.create({ name: data.endereco })).attrs,
+        createClients: (await schema.createClients.create({ name:data })).attrs,
+        
       }
     })
 
@@ -75,7 +63,7 @@ new Server ({
       if (user.password !== JSON.parse(request.requestBody).password) {
         return new Response(400, { some: 'header' }, { errors: 'Login ou senha invalida' });
       }
-      return { message: 'Login com sucesso!', users: user.name }
+      return { message: 'Login efetuado com sucesso!', users: user.name }
 
     })
 

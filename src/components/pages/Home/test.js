@@ -33,18 +33,7 @@
 //     }
 //   }
 
-//   // const deleteTask = (index) => {
-//   //   let tempList = taskClients
-//   //   tempList.splice(index, 1)
-//   //   localStorage.setItem("taskList", JSON.stringify(tempList))
-//   //   setTaskClients(tempList)
-//   //   axios.delete(`/api/delete/${index}`, {
-//   //     method: 'DELETE',
-//   //   }).then(() => {
-//   //     setDel(!del)
-//   //   });
 
-//   // }
 
 //   return (
 //     <>
