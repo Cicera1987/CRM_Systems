@@ -14,6 +14,7 @@ new Server ({
     clients: Model,
     cpf: Model,
     email: Model,
+    updadeClients: Model,
  
 
   },
@@ -52,6 +53,14 @@ new Server ({
       return {
         createClients: (await schema.createClients.create({ name:data })).attrs,
         
+      }
+    })
+
+    this.put('/updateClients', async (schema, request) => {
+      const data = JSON.parse(request.requestBody)
+      return {
+        updateClients: (await schema.updateClients.all({id:data})).attrs,
+
       }
     })
 

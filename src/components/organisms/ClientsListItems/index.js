@@ -4,7 +4,7 @@ import { ContainerStyle } from '../../atoms/Container';
 import ClientsList from '../ClientsList/index'
 
 
-const ListClients = () => {
+const ListClients = ({ ModelClients }) => {
   const {id} = useParams();
 
     

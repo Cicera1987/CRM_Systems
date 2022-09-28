@@ -10,7 +10,8 @@ import axios from '../../../../services/axios'
 import { toast } from 'react-toastify'
 import { UniversalFooter } from '../../../organisms/Footer/style'
 import { ButtonCancel } from '../../../atoms/Bottons/ButtonCancel/style'
-import {useNavigate} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
 
 
 
@@ -25,12 +26,14 @@ const initialValue = {
 const ModelClients = () => {
     const [createClients, setCreateClients] = useState({ initialValue })
     const [modalIsOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate()
+    const [updateClients, setUpadateClients] = useState(false)
+    const {id} = useParams
+  
 
 
 
-    useEffect(() => {
-        axios.get('/api/createClients')
+    useEffect((id) => {
+        axios.get('/api/createClients', id)
             .then(res => setCreateClients(res.data.createClients))
     }, [])
 
@@ -44,12 +47,20 @@ const ModelClients = () => {
         e.preventDefault()
         axios.post('/api/createClients', createClients)
         .then((res)=>{
-            navigate.push('/clients')
+            setCreateClients(res.data.createClients)
+            return toast.success("Cliente cadastrado com sucesso")
+        })
+        .catch(err => err)
+        
+    }
 
+    const update = () =>{
+        axios.put('/api/updateClients', updateClients)
+        .then((res) => {
+            setUpadateClients(res.data.updateClients)
         })
     }
     
-
     function openModal() {
         setIsOpen(true)
     }
